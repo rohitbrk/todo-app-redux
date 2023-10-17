@@ -1,3 +1,4 @@
+// @ts-ignore
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import { useState } from "react";
