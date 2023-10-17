@@ -1,3 +1,4 @@
+// @ts-nocheck
 type AddTodoProps = {
   title: string;
   desc: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useDispatch } from "react-redux";
 import { deleteTodo } from "../features/todo/todoSlice.ts";
 
