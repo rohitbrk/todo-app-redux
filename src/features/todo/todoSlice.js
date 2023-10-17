@@ -18,10 +18,21 @@ export const todoSlice = createSlice({
       state.todos.push(todo);
     },
     deleteTodo: (state, action) => {
-      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
+    },
+    editTodo: (state, action) => {
+      state.todos = state.todos.map((todo) => {
+        if (todo.id === action.payload.id)
+          return {
+            id: action.payload.id,
+            title: action.payload.title,
+            desc: action.payload.desc,
+          };
+        return todo;
+      });
     },
   },
 });
 
-export const { addTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, editTodo } = todoSlice.actions;
 export default todoSlice.reducer;

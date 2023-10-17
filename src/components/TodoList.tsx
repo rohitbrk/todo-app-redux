@@ -1,6 +1,13 @@
 import { useSelector } from "react-redux";
 import Todo from "./Todo";
-const TodoList = () => {
+
+type TodoListProps = {
+  setTitle: (title: string) => void;
+  setDesc: (desc: string) => void;
+  setEditTodoFlag: (editTodoFlag: string) => void;
+};
+
+const TodoList = ({ setTitle, setDesc, setEditTodoFlag }: TodoListProps) => {
   const todos: Array<{
     id: string;
     title: string;
@@ -8,26 +15,23 @@ const TodoList = () => {
     completed: boolean;
   }> = useSelector((state) => state.todos);
   return (
-    <div className="pt-6 items-center flex justify-center">
-      <div className="block max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+    <div className="mt-2 flex justify-center text-center">
+      <div className="w-[28rem] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          No ToDos. Create One !
+          ToDos
         </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order.
-        </p>
-        <div>
-          {" "}
-          {todos.map((todo) => (
-            <Todo
-              key={todo.id}
-              title={todo.title}
-              desc={todo.desc}
-              completed={todo.completed}
-            />
-          ))}
-        </div>
+        {todos.map((todo) => (
+          <Todo
+            setTitle={setTitle}
+            setDesc={setDesc}
+            key={todo.id}
+            id={todo.id}
+            title={todo.title}
+            desc={todo.desc}
+            completed={todo.completed}
+            setEditTodoFlag={setEditTodoFlag}
+          />
+        ))}
       </div>
     </div>
   );

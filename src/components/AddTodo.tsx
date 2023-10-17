@@ -1,18 +1,18 @@
-import { useDispatch } from "react-redux";
-import { addTodo } from "../features/todo/todoSlice.js";
-import { useState } from "react";
+type AddTodoProps = {
+  title: string;
+  desc: string;
+  setTitle: (title: string) => void;
+  setDesc: (desc: string) => void;
+  handleAddTodo: () => void;
+};
 
-const AddTodo = () => {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-
-  const dispatch = useDispatch();
-  const handleAddTodo = () => {
-    dispatch(addTodo({ title, desc, complted: false }));
-    setTitle("");
-    setDesc("");
-  };
-
+const AddTodo = ({
+  title,
+  desc,
+  setTitle,
+  setDesc,
+  handleAddTodo,
+}: AddTodoProps) => {
   return (
     <div className="pt-6 items-center flex justify-center">
       <div className="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
