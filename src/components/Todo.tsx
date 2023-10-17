@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteTodo } from "../features/todo/todoSlice.js";
+import { deleteTodo } from "../features/todo/todoSlice.ts";
 
 type TodoProps = {
   id: string;
