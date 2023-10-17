@@ -14,7 +14,7 @@ const AddTodo = ({
   handleAddTodo,
 }: AddTodoProps) => {
   return (
-    <div className="pt-6 items-center flex justify-center">
+    <div className="pt-4 items-center flex justify-center">
       <div className="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
           <img className="rounded-t-lg" src="/todos.jpg" alt="" />
@@ -22,14 +22,14 @@ const AddTodo = ({
         <div className="p-5 ">
           <a href="#" className="flex justify-center">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ToDo
+              ToDos
             </h5>
           </a>
           <p className="flex justify-center mb-3 font-normal text-gray-700 dark:text-gray-400">
             Manage your ToDos with ease
           </p>
           <div className="mx-8">
-            <div className="relative mb-6">
+            <div className="relative mb-4">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const AddTodo = ({
                 placeholder="Title"
               />
             </div>
-            <div className="relative mb-6">
+            <div className="relative mb-4">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
                 <svg
                   className="w-4 h-4 text-gray-500 dark:text-gray-400"

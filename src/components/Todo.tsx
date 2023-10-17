@@ -9,6 +9,7 @@ type TodoProps = {
   setTitle: (title: string) => void;
   setDesc: (desc: string) => void;
   setEditTodoFlag: (editTodoFlag: string) => void;
+  setCompleted: (completed: boolean) => void;
 };
 
 const Todo = ({
@@ -19,6 +20,7 @@ const Todo = ({
   setTitle,
   setDesc,
   setEditTodoFlag,
+  setCompleted,
 }: TodoProps) => {
   const dispatch = useDispatch();
 
@@ -36,7 +38,7 @@ const Todo = ({
     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-between">
         <div>
-          <input type="checkbox" checked={completed} className="w-4 h-4" />
+          <input type="checkbox" className="w-4 h-4" />
           <span className="ml-4 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </span>
