@@ -1,5 +1,5 @@
 import AddTodo from "./components/AddTodo";
-import TodoList from "./components/TodoList.tsx";
+import TodoList from "./components/TodoList";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo, editTodo } from "./features/todo/todoSlice.ts";
